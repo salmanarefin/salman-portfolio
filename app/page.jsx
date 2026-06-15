@@ -69,10 +69,25 @@ const projects = [
   },
 ];
 
+const experiences = [
+  {
+    role: 'Research & Analysis Assistant',
+    company: 'EduBdesh — Arha-ab Group',
+    location: 'Dhaka, Bangladesh',
+    duration: 'Jan 2026 – June 2026',
+    points: [
+      'Conducting research to support business development, communication, and planning activities.',
+      'Analyzing information and preparing insights for branding and outreach initiatives.',
+      'Collaborating with cross-functional teams in a business and technology consulting environment.',
+    ],
+  },
+];
+
 const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
   { label: 'Education', href: '#education' },
   { label: 'Certifications', href: '#certifications' },
   { label: 'Contact', href: '#contact' },
@@ -100,8 +115,8 @@ export default function Home() {
           </div>
 
           <a
-            href="/Salman_Arefin_CV.pdf"
-            download
+            href="/salman-cv.pdf"
+            download="Salman_Arefin_CV.pdf"
             className="rounded-full border border-sky-300/40 px-4 py-2 text-sm font-bold text-sky-100 transition hover:bg-sky-400/10"
           >
             Download CV
@@ -253,6 +268,42 @@ export default function Home() {
                 </a>
               </div>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="experience" className="mx-auto max-w-6xl px-5 py-16">
+        <p className="text-sm font-bold uppercase tracking-[0.25em] text-sky-300">
+          Experience
+        </p>
+
+        <h2 className="section-title mt-3">Professional Experience</h2>
+
+        <div className="mt-8 grid gap-6">
+          {experiences.map((experience) => (
+            <div key={experience.role} className="card p-8">
+              <p className="text-sm font-semibold text-sky-300">
+                {experience.duration}
+              </p>
+
+              <h3 className="mt-3 text-2xl font-black text-white">
+                {experience.role}
+              </h3>
+
+              <p className="mt-2 text-lg font-semibold text-slate-200">
+                {experience.company}
+              </p>
+
+              <p className="mt-1 text-slate-400">{experience.location}</p>
+
+              <ul className="mt-5 space-y-3 text-slate-300">
+                {experience.points.map((point) => (
+                  <li key={point} className="leading-7">
+                    • {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
         </div>
       </section>
