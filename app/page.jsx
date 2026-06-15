@@ -130,7 +130,7 @@ export default function Home() {
       >
         <div>
           <p className="mb-4 inline-flex rounded-full border border-sky-300/30 bg-sky-400/10 px-4 py-2 text-sm font-semibold text-sky-100">
-            Software Engineer • Full-Stack Developer
+            Software Engineer • Full-Stack & Web Developer
           </p>
 
           <h1 className="text-5xl font-black tracking-[-0.06em] text-white md:text-7xl">
