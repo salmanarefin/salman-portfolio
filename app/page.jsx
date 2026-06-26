@@ -563,7 +563,7 @@ export default function Home() {
           <h2 className="section-title mt-3">Let’s build something useful.</h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-            I am open to internship, entry-level software developer, backend
+            I am open to entry-level software developer, backend
             developer, and full-stack developer opportunities.
           </p>
 
