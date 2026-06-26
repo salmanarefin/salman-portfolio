@@ -1,7 +1,11 @@
+'use client';
+
+import { useEffect } from 'react';
+
 const skills = {
   Languages: ['Java', 'C#', 'C++', 'Python', 'JavaScript', 'PHP'],
   Frontend: ['HTML', 'CSS', 'React.js', 'Next.js'],
-  Backend: ['NestJS', 'ASP.NET', 'PHP'],
+  Backend: ['NestJS', 'ASP.NET', 'PHP', 'Laravel'],
   Database: ['MySQL', 'PostgreSQL', 'Oracle'],
   Tools: [
     'GitHub',
@@ -14,6 +18,7 @@ const skills = {
     'Emu8086',
     'Cisco Packet Tracer',
     'Google Colab',
+    'Composer',
   ],
   Concepts: ['OOP', 'Data Structures', 'Web Development', 'ML', 'OpenGL'],
 };
@@ -22,48 +27,63 @@ const projects = [
   {
     title: 'E-Pharmacy Shop Management System',
     tech: 'NestJS, Next.js, React.js, PostgreSQL • 2026',
+    github: 'https://github.com/salmanarefin/E-Pharmecy_management_system',
     description:
       'A full-stack web application for managing inventory, sales, customer data, medicines, orders, and pharmacy operations.',
   },
   {
     title: 'Library Management System',
     tech: 'ASP.NET, C#, SQL • 2026',
+    github: 'https://github.com/salmanarefin/Library_management_system-Asp.net-',
     description:
       'A web-based system for managing books, users, borrowing records, returns, and library administrative workflows.',
   },
   {
+    title: 'Hostel Management System',
+    tech: 'Laravel, PHP, MySQL, Blade, Tailwind CSS, JavaScript • 2026',
+    github: 'https://github.com/salmanarefin/hostel_management_system',
+    description:
+      'A web-based hostel management system for managing seats, customers, bookings, admin dashboard, offers, authentication, rent payment, leave/exit requests, and admin approval workflows.',
+  },
+  {
     title: 'Supershop Management System',
     tech: 'HTML, CSS, JavaScript, PHP, MySQL • 2025',
+    github: 'https://github.com/salmanarefin/Supershop_management',
     description:
       'A dynamic web-based application for managing products, sales, customer data, and daily shop operations.',
   },
   {
     title: 'Health Data Bank',
     tech: 'Software Requirements Engineering • 2025',
+    github: 'https://github.com/salmanarefin/Heath_Data_Bank_Software_Requirement',
     description:
       'A centralized health record management system designed through requirement gathering and analysis for secure and efficient health data handling.',
   },
   {
     title: 'Agricultural Shop Management System',
     tech: 'C#, Database • 2024',
+    github: 'https://github.com/salmanarefin/AGRICULTURE-MANAGEMENT-C-SHARP',
     description:
       'A management system for handling agricultural products, inventory, sales, customer records, stock tracking, and transactions.',
   },
   {
     title: 'Real-Time Sign Language Translation',
     tech: 'SRE, SQT, Computer Vision • 2024',
+    github: 'https://github.com/salmanarefin/RealTimeLanguageTranslationForSignLanguage',
     description:
       'A real-time sign language translation project that converts gestures into text using computer vision concepts with requirement analysis, system design, UI/UX planning, risk analysis, and testing.',
   },
   {
     title: 'City Life Simulation',
     tech: 'OpenGL, Graphics Programming • 2023',
+    github: 'https://github.com/salmanarefin/computer-graphics',
     description:
       'An OpenGL-based simulation of city environments using 2D/3D graphics, animation, and real-time rendering concepts.',
   },
   {
     title: 'Airplane Ticket Management System',
     tech: 'Java • 2022',
+    github: 'https://github.com/salmanarefin/java-main-project',
     description:
       'A desktop-based system for booking, managing, and tracking airline tickets with user input handling, data processing, and booking management.',
   },
@@ -94,9 +114,90 @@ const navItems = [
 ];
 
 export default function Home() {
+  useEffect(() => {
+    const revealItems = document.querySelectorAll(
+      `
+      section:not(#home) > p,
+      section:not(#home) .section-title,
+      section:not(#home) .card h2,
+      section:not(#home) .card h3,
+      section:not(#home) .card p,
+      section:not(#home) .card li,
+      section:not(#home) .card span,
+      section:not(#home) .card a
+      `
+    );
+
+    revealItems.forEach((element, index) => {
+      element.classList.add('text-reveal-pro');
+
+      if (index % 2 === 0) {
+        element.classList.add('text-from-left');
+      } else {
+        element.classList.add('text-from-right');
+      }
+
+      element.style.transitionDelay = `${Math.min((index % 5) * 0.06, 0.3)}s`;
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('text-reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -70px 0px',
+      }
+    );
+
+    revealItems.forEach((element) => observer.observe(element));
+
+    const cards = document.querySelectorAll('.card');
+
+    const handleMouseMove = (event) => {
+      const card = event.currentTarget;
+      const rect = card.getBoundingClientRect();
+
+      card.style.setProperty('--mouse-x', `${event.clientX - rect.left}px`);
+      card.style.setProperty('--mouse-y', `${event.clientY - rect.top}px`);
+    };
+
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', handleMouseMove);
+    });
+
+    return () => {
+      observer.disconnect();
+
+      cards.forEach((card) => {
+        card.removeEventListener('mousemove', handleMouseMove);
+      });
+    };
+  }, []);
+
   return (
-    <main className="min-h-screen overflow-hidden">
-      <nav className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+    <main className="min-h-screen overflow-x-hidden">
+      <div className="dynamic-background" aria-hidden="true">
+        <span className="bg-orb orb-one"></span>
+        <span className="bg-orb orb-two"></span>
+        <span className="bg-orb orb-three"></span>
+
+        <span className="particle particle-1"></span>
+        <span className="particle particle-2"></span>
+        <span className="particle particle-3"></span>
+        <span className="particle particle-4"></span>
+        <span className="particle particle-5"></span>
+        <span className="particle particle-6"></span>
+        <span className="particle particle-7"></span>
+        <span className="particle particle-8"></span>
+      </div>
+
+      <nav className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <a href="#home" className="text-xl font-black tracking-tight text-white">
             Salman<span className="gradient-text">.</span>
@@ -165,8 +266,8 @@ export default function Home() {
         </div>
 
         <div className="card relative p-8">
-          <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-sky-400/20 blur-3xl" />
-          <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-purple-400/20 blur-3xl" />
+          <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-sky-400/20" />
+          <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full bg-purple-400/20" />
 
           <div className="relative mx-auto h-56 w-56 overflow-hidden rounded-full border border-white/10 bg-white/10">
             <img
@@ -178,8 +279,12 @@ export default function Home() {
 
           <div className="relative mt-8 grid gap-4 text-center">
             <h2 className="text-2xl font-black text-white">
-              Software Engineer | Full-Stack & Web Developer | ASP.NET | NestJS | Next.js
+              Software Engineer | Full-Stack Web Developer
             </h2>
+
+            <p className="text-lg font-semibold text-sky-300">
+              React.js | Next.js | NestJS | ASP.NET
+            </p>
 
             <p className="text-slate-400">AIUB • BSc in CSE</p>
           </div>
@@ -247,7 +352,7 @@ export default function Home() {
           {projects.map((project) => (
             <article
               key={project.title}
-              className="card flex flex-col p-6 transition hover:-translate-y-1 hover:bg-white/10"
+              className="card flex flex-col p-6 transition hover:bg-white/10"
             >
               <h3 className="text-2xl font-black text-white">{project.title}</h3>
 
@@ -259,7 +364,16 @@ export default function Home() {
                 {project.description}
               </p>
 
-              <div className="mt-6 flex gap-3">
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full bg-sky-400 px-4 py-2 text-sm font-bold text-slate-950 hover:bg-sky-300"
+                >
+                  GitHub
+                </a>
+
                 <a
                   href="#contact"
                   className="rounded-full border border-white/15 px-4 py-2 text-sm font-bold text-white hover:bg-white/10"
@@ -375,7 +489,7 @@ export default function Home() {
 
         <h2 className="section-title mt-3">Professional Certifications</h2>
 
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <div className="card p-8">
             <p className="text-sm font-semibold text-sky-300">Cisco</p>
 
@@ -409,8 +523,32 @@ export default function Home() {
               Workplace Communication
             </h3>
 
+            <p className="mt-3 text-slate-300">Communication Essentials</p>
+          </div>
+
+          <div className="card p-8">
+            <p className="text-sm font-semibold text-sky-300">
+              Team Pro5.ai on behalf of bKash Limited
+            </p>
+
+            <h3 className="mt-3 text-xl font-black text-white">
+              bKash Limited Technical Vetting Certificate
+            </h3>
+
             <p className="mt-3 text-slate-300">
-              Communication Essentials
+              Technical vetting certificate completed in 2026.
+            </p>
+          </div>
+
+          <div className="card p-8">
+            <p className="text-sm font-semibold text-sky-300">Pro5.ai</p>
+
+            <h3 className="mt-3 text-xl font-black text-white">
+              ASP.NET Technical Vetting Certificate
+            </h3>
+
+            <p className="mt-3 text-slate-300">
+              ASP.NET technical vetting certificate completed in 2026.
             </p>
           </div>
         </div>
