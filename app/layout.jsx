@@ -1,7 +1,7 @@
 import './globals.css';
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://your-portfolio-domain.vercel.app';
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://salman-portfolio-etyo.vercel.app';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -20,6 +20,7 @@ export const metadata = {
     'Salman Arefin Software Engineer',
     'Salman Arefin Developer',
     'Full Stack Developer Bangladesh',
+    'Software Engineer Bangladesh',
     'React Developer Bangladesh',
     'Next.js Developer Bangladesh',
     'NestJS Developer',
@@ -31,6 +32,10 @@ export const metadata = {
   authors: [{ name: 'Salman Arefin' }],
   creator: 'Salman Arefin',
   publisher: 'Salman Arefin',
+
+  verification: {
+    google: 'B9P8apdDH7nlqJfGfGlde-NvhQNEIEO9rUy10DcxOhs',
+  },
 
   alternates: {
     canonical: '/',
