@@ -279,7 +279,7 @@ export default function Home() {
 
           <div className="relative mt-8 grid gap-4 text-center">
             <h2 className="text-2xl font-black text-white">
-              Software Engineer | Full-Stack Web Developer
+              Software Engineer | Full-Stack & Web Developer
             </h2>
 
             <p className="text-lg font-semibold text-sky-300">
