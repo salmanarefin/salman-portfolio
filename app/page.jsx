@@ -242,7 +242,7 @@ export default function Home() {
             BSc graduate in Computer Science and Engineering from American
             International University-Bangladesh, majoring in Software
             Engineering. I build clean, scalable, and practical software
-            solutions using React, Next.js, NestJS, ASP.NET, PHP, MySQL,
+            solutions using React, Next.js, NestJS, ASP.NET, Laravel, PHP, MySQL,
             PostgreSQL, and Oracle. I also work with tools such as GitHub,
             Postman, VS Code, Visual Studio, and Figma to develop, test, and
             manage software projects.
@@ -283,7 +283,7 @@ export default function Home() {
             </h2>
 
             <p className="text-lg font-semibold text-sky-300">
-              React.js | Next.js | NestJS | ASP.NET
+              React.js | Next.js | NestJS | ASP.NET | Laravel
             </p>
 
             <p className="text-slate-400">AIUB • BSc in CSE</p>
