@@ -23,6 +23,45 @@ const skills = {
   Concepts: ['OOP', 'Data Structures', 'Web Development', 'ML', 'OpenGL'],
 };
 
+const whatIDo = [
+  {
+    title: 'Full-Stack Web Development',
+    description:
+      'I build complete web applications by connecting user-friendly frontend interfaces with secure backend systems and databases.',
+    items: ['React.js', 'Next.js', 'NestJS', 'ASP.NET', 'Laravel'],
+  },
+  {
+    title: 'Backend Development',
+    description:
+      'I develop server-side logic, authentication flows, database operations, API endpoints, and admin/customer management features.',
+    items: ['NestJS', 'ASP.NET', 'Laravel', 'PHP', 'REST API'],
+  },
+  {
+    title: 'Frontend Development',
+    description:
+      'I create clean, responsive, and modern user interfaces with smooth user experience for dashboards, management systems, and portfolio websites.',
+    items: ['HTML', 'CSS', 'JavaScript', 'React.js', 'Next.js'],
+  },
+  {
+    title: 'Database Work',
+    description:
+      'I design and work with database-driven systems for storing, managing, and retrieving application data efficiently.',
+    items: ['MySQL', 'PostgreSQL', 'Oracle', 'Database Design'],
+  },
+  {
+    title: 'API Testing & Development Tools',
+    description:
+      'I test API endpoints, debug application flows, manage source code, and work with professional development tools.',
+    items: ['Postman', 'GitHub', 'VS Code', 'Visual Studio', 'Selenium'],
+  },
+  {
+    title: 'Software Planning & Documentation',
+    description:
+      'I prepare requirement analysis, system design, testing plans, and project documentation for academic and real-world software projects.',
+    items: ['SRS', 'SQT', 'Requirement Analysis', 'System Design'],
+  },
+];
+
 const projects = [
   {
     title: 'E-Pharmacy Shop Management System',
@@ -104,7 +143,8 @@ const experiences = [
 ];
 
 const navItems = [
-  { label: 'About', href: '#about' },
+  { label: 'Who I Am', href: '#who-i-am' },
+  { label: 'What I Do', href: '#what-i-do' },
   { label: 'Skills', href: '#skills' },
   { label: 'Projects', href: '#projects' },
   { label: 'Experience', href: '#experience' },
@@ -203,12 +243,12 @@ export default function Home() {
             Salman<span className="gradient-text">.</span>
           </a>
 
-          <div className="hidden items-center gap-6 md:flex">
+          <div className="hidden items-center gap-4 lg:flex">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="nav-link text-sm font-semibold"
+                className="nav-link text-xs font-semibold xl:text-sm"
               >
                 {item.label}
               </a>
@@ -239,13 +279,11 @@ export default function Home() {
           </h1>
 
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            BSc graduate in Computer Science and Engineering from American
-            International University-Bangladesh, majoring in Software
-            Engineering. I build clean, scalable, and practical software
-            solutions using React, Next.js, NestJS, ASP.NET, Laravel, PHP, MySQL,
-            PostgreSQL, and Oracle. I also work with tools such as GitHub,
-            Postman, VS Code, Visual Studio, and Figma to develop, test, and
-            manage software projects.
+            Software Engineering graduate from American International
+            University-Bangladesh (AIUB) with hands-on experience in full-stack web
+            development. I build scalable, database-driven, and user-focused
+            applications using React.js, Next.js, NestJS, ASP.NET, Laravel, PHP,
+            MySQL, PostgreSQL, and Oracle.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -279,7 +317,7 @@ export default function Home() {
 
           <div className="relative mt-8 grid gap-4 text-center">
             <h2 className="text-2xl font-black text-white">
-              Software Engineer | Full-Stack & Web Developer
+              Software Engineer | Full-Stack Web Developer
             </h2>
 
             <p className="text-lg font-semibold text-sky-300">
@@ -291,26 +329,66 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-6xl px-5 py-16">
+      <section id="who-i-am" className="mx-auto max-w-6xl px-5 py-16">
         <div className="card p-8 md:p-10">
           <p className="text-sm font-bold uppercase tracking-[0.25em] text-sky-300">
-            About Me
+            Who I Am
           </p>
 
-          <h2 className="section-title mt-3">
-            I build practical software with clean structure.
-          </h2>
+          <h2 className="section-title mt-3">Who is Salman Arefin?</h2>
 
           <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-300">
-            I am a Computer Science & Engineering graduate from American
-            International University-Bangladesh, majoring in Software
-            Engineering. My experience includes full-stack web applications,
-            management systems, database-driven platforms, and academic projects
-            involving machine learning, software requirement analysis, testing,
-            and computer graphics. I focus on building clean, practical, and
-            maintainable software solutions that solve real problems and support
-            better user experiences.
+            Salman Arefin is a Bangladeshi Software Engineer and Full-Stack Web
+            Developer. He completed his BSc in Computer Science and Engineering
+            from American International University-Bangladesh (AIUB), majoring in
+            Software Engineering.
           </p>
+
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">
+            He works with React.js, Next.js, NestJS, ASP.NET, Laravel, PHP,
+            MySQL, PostgreSQL, and Oracle. His experience includes full-stack web
+            applications, management systems, database-driven platforms, software
+            requirement analysis, testing, and computer graphics.
+          </p>
+
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">
+            He focuses on building clean, practical, and maintainable software
+            solutions that solve real problems and support better user
+            experiences.
+          </p>
+        </div>
+      </section>
+
+      <section id="what-i-do" className="mx-auto max-w-6xl px-5 py-16">
+        <p className="text-sm font-bold uppercase tracking-[0.25em] text-sky-300">
+          What I Do
+        </p>
+
+        <h2 className="section-title mt-3">
+          I develop complete software solutions from frontend to database.
+        </h2>
+
+        <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {whatIDo.map((item) => (
+            <div key={item.title} className="card p-6">
+              <h3 className="text-xl font-black text-white">{item.title}</h3>
+
+              <p className="mt-4 leading-7 text-slate-300">
+                {item.description}
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2">
+                {item.items.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full border border-white/10 bg-white/10 px-3 py-2 text-sm text-slate-200"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -560,11 +638,12 @@ export default function Home() {
             Contact
           </p>
 
-          <h2 className="section-title mt-3">Let’s build something useful.</h2>
+          <h2 className="section-title mt-3">Let’s build reliable software that creates real value.</h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
-            I am open to entry-level software developer, backend
-            developer, and full-stack developer opportunities.
+            I am seeking entry-level Software Developer, Backend Developer, or
+            Full-Stack Developer opportunities where I can contribute to practical
+            software solutions and continue growing as a professional engineer.
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">
