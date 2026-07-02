@@ -5,8 +5,8 @@ import { useEffect } from 'react';
 const skills = {
   Languages: ['Java', 'C#', 'C++', 'Python', 'JavaScript', 'PHP'],
   Frontend: ['HTML', 'CSS', 'React.js', 'Next.js'],
-  Backend: ['NestJS', 'ASP.NET', 'PHP', 'Laravel'],
-  Database: ['MySQL', 'PostgreSQL', 'Oracle'],
+  Backend: ['NestJS', 'ASP.NET Core', 'PHP', 'Laravel'],
+  Database: ['MySQL', 'PostgreSQL', 'SQL Server', 'Oracle'],
   Tools: [
     'GitHub',
     'Postman',
@@ -28,13 +28,13 @@ const whatIDo = [
     title: 'Full-Stack Web Development',
     description:
       'I build complete web applications by connecting user-friendly frontend interfaces with secure backend systems and databases.',
-    items: ['React.js', 'Next.js', 'NestJS', 'ASP.NET', 'Laravel'],
+    items: ['React.js', 'Next.js', 'NestJS', 'ASP.NET Core', 'Laravel'],
   },
   {
     title: 'Backend Development',
     description:
       'I develop server-side logic, authentication flows, database operations, API endpoints, and admin/customer management features.',
-    items: ['NestJS', 'ASP.NET', 'Laravel', 'PHP', 'REST API'],
+    items: ['NestJS', 'ASP.NET Core', 'Laravel', 'PHP', 'REST API'],
   },
   {
     title: 'Frontend Development',
@@ -46,7 +46,7 @@ const whatIDo = [
     title: 'Database Work',
     description:
       'I design and work with database-driven systems for storing, managing, and retrieving application data efficiently.',
-    items: ['MySQL', 'PostgreSQL', 'Oracle', 'Database Design'],
+    items: ['MySQL', 'PostgreSQL', 'SQL Server', 'Oracle', 'Database Design'],
   },
   {
     title: 'API Testing & Development Tools',
@@ -63,6 +63,13 @@ const whatIDo = [
 ];
 
 const projects = [
+  {
+    title: 'Advanced ERP HRMS Management System',
+    tech: 'ASP.NET Core MVC, C#, Entity Framework Core, SQL Server, Identity, Bootstrap, Chart.js • 2026',
+    github: 'https://github.com/salmanarefin/Advanced_ERP_Management_System',
+    description:
+      'A role-based ERP HRMS web application for managing employees, departments, attendance, leave, payroll, reports, audit logs, and dashboard analytics.',
+  },
   {
     title: 'E-Pharmacy Shop Management System',
     tech: 'NestJS, Next.js, React.js, PostgreSQL • 2026',
@@ -282,8 +289,8 @@ export default function Home() {
             Software Engineering graduate from American International
             University-Bangladesh (AIUB) with hands-on experience in full-stack web
             development. I build scalable, database-driven, and user-focused
-            applications using React.js, Next.js, NestJS, ASP.NET, Laravel, PHP,
-            MySQL, PostgreSQL, and Oracle.
+            applications using React.js, Next.js, NestJS, ASP.NET Core, Laravel,
+            PHP, MySQL, PostgreSQL, SQL Server, and Oracle.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -321,7 +328,7 @@ export default function Home() {
             </h2>
 
             <p className="text-lg font-semibold text-sky-300">
-              React.js | Next.js | NestJS | ASP.NET | Laravel
+              React.js | Next.js | NestJS | ASP.NET Core | Laravel | SQL Server
             </p>
 
             <p className="text-slate-400">AIUB • BSc in CSE</p>
@@ -345,10 +352,11 @@ export default function Home() {
           </p>
 
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">
-            He works with React.js, Next.js, NestJS, ASP.NET, Laravel, PHP,
-            MySQL, PostgreSQL, and Oracle. His experience includes full-stack web
-            applications, management systems, database-driven platforms, software
-            requirement analysis, testing, and computer graphics.
+            He works with React.js, Next.js, NestJS, ASP.NET Core, Laravel, PHP,
+            MySQL, PostgreSQL, SQL Server, and Oracle. His experience includes
+            full-stack web applications, management systems, database-driven
+            platforms, software requirement analysis, testing, and computer
+            graphics.
           </p>
 
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-300">
@@ -638,7 +646,9 @@ export default function Home() {
             Contact
           </p>
 
-          <h2 className="section-title mt-3">Let’s build reliable software that creates real value.</h2>
+          <h2 className="section-title mt-3">
+            Let’s build reliable software that creates real value.
+          </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
             I am seeking entry-level Software Developer, Backend Developer, or
